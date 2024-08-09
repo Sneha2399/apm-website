@@ -1,0 +1,509 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://www.eco-catalyst.com/wp-content/uploads/2024/06/Gilroy-Bold.ttf">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<section id="hero">
+    <div class="hero-container">
+        <div class="row eco-imag">
+            <div class="col-md-5">
+                <h2>Accelerating</h2>
+                <h1>Repair, Refurbish, Reuse</h1>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<style>
+    .eco-imag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 70px;
+    }
+
+    #hero {
+        width: 100%;
+        height: 100vh;
+        background: url("https://www.eco-catalyst.com/wp-content/uploads/2024/06/hero-background.png") top center no-repeat;
+        background-size: cover;
+        position: relative;
+
+    }
+
+    #hero .hero-container {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+
+
+    }
+
+    #hero h2 {
+        margin: 0 0 10px 0;
+        font-size: 34px;
+        font-weight: 600;
+        color: #000;
+        text-align: left !important;
+        font-family: 'Inter', sans-serif;
+    }
+
+    #hero h1 {
+        color: #000;
+        font-family: "Glory", sans-serif;
+        font-size: 70px;
+        font-weight: 900;
+        margin: 0 !important;
+
+    }
+
+
+
+    @media (min-width: 1024px) {
+        #hero {
+            background-attachment: fixed;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #hero h1 {
+            font-size: 28px;
+            line-height: 36px;
+        }
+
+        #hero h2 {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 30px;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollDownBtn = document.getElementById("scrollDownBtn");
+
+        // Arrow key navigation
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowDown") {
+                event.preventDefault(); // Prevent default scrolling behavior
+                scrollToNextSection();
+            }
+        });
+
+        // Click event on down arrow button
+        scrollDownBtn.addEventListener("click", function () {
+            scrollToNextSection();
+        });
+
+        // Function to scroll to the next section
+        function scrollToNextSection() {
+            const currentSection = document.querySelector("section:focus") || document.querySelector("section");
+            let nextSection = currentSection.nextElementSibling;
+
+            while (nextSection && nextSection.tagName !== "SECTION") {
+                nextSection = nextSection.nextElementSibling;
+            }
+
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    });
+
+
+</script>
+
+<section id="next-section">
+    <div class="row">
+        <h2 class="hdng">Consumer Product Flow</h2>
+    </div>
+    <div class="container-1">
+        <div class="card active"
+            style="background-image: url('https://www.eco-catalyst.com/wp-content/uploads/2024/06/imag-1.png')">
+            <div class="card-content">
+                <span class="number">1</span>
+                <h3>&nbsp;&nbsp;Omnichannel Retail</h3>
+            </div>
+        </div>
+        <style>
+
+        </style>
+        <div class="card"
+            style="background-image: url('https://www.eco-catalyst.com/wp-content/uploads/2024/06/imag-2.png')">
+            <div class="card-content">
+                <span class="number-1">2</span>
+                <h3>&nbsp;&nbsp;Consumer</h3>
+            </div>
+
+        </div>
+        <div class="card"
+            style="background-image: url('https://www.eco-catalyst.com/wp-content/uploads/2024/06/imag-3.png')">
+            <div class="card-content">
+                <span class="number">3</span>
+                <div class="social-contn">
+                    <h3>&nbsp;&nbsp;Social Business Repair/ Reuse Network</h3>
+
+                    <p class="social-text">&nbsp;&nbsp;Organized, Trained, Flexible, Economical Repair and Refurbish</p>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="card"
+            style="background-image: url('https://www.eco-catalyst.com/wp-content/uploads/2024/06/imag-4.png')">
+            <div class="card-content">
+                <span class="number">4</span>
+                <h3>&nbsp;&nbsp;Recommerce</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="progress-container" style="text-align: center;">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="button-container">
+        <button id="buttonA">Omnichannel Retail</button>
+        <button id="buttonB">Consumer</button>
+        <button id="buttonC">Social Business Network</button>
+        <button id="buttonD">Recommerce</button>
+    </div>
+</section>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const nextSection = document.getElementById("next-section");
+    const cards = document.querySelectorAll(".card");
+    const progressBar = document.querySelector(".progress-bar");
+    const socialText = document.querySelector(".social-text");
+    const number3 = document.querySelector(".card:nth-child(3) .number");
+    let currentIndex = 0;
+
+    function removeActiveClasses() {
+        cards.forEach(card => {
+            card.classList.remove('active');
+        });
+    }
+
+    function updateActiveCard(index) {
+        removeActiveClasses();
+        cards[index].classList.add('active');
+        updateProgressBar(index);
+        updateCardVisibility(index);
+    }
+
+    function updateProgressBar(index) {
+        const progress = 10 + index * 30;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    function updateCardVisibility(index) {
+        cards.forEach((card, i) => {
+            card.style.display = 'block';
+            card.style.flex = '1.5';
+            if (index === 0) {
+                if (i === 0) {
+                    card.style.flex = '1.5';
+                } else if (i === 1) {
+                    card.style.flex = '.5';
+                } else if (i === 2) {
+                    card.style.flex = '.8';
+                } else {
+                    card.style.display = 'none';
+                }
+            } else if (index === 1) {
+                if (i === 0) {
+                    card.style.display = 'none';
+                } else if (i === 1) {
+                    card.style.flex = '1.5';
+                } else if (i === 2) {
+                    card.style.flex = '.5';
+                } else if (i === 3) {
+                    card.style.flex = '.8';
+                }
+            } else if (index === 2) {
+                if (i === 0) {
+                    card.style.display = 'none';
+                } else if (i === 1) {
+                    card.style.flex = '.5';
+                } else if (i === 2) {
+                    card.style.flex = '1.5';
+                } else if (i === 3) {
+                    card.style.flex = '.8';
+                }
+            } else if (index === 3) {
+                if (i === 0) {
+                    card.style.display = 'none';
+                } else if (i === 1) {
+                    card.style.flex = '.3';
+                } else if (i === 2) {
+                    card.style.flex = '.5';
+                } else if (i === 3) {
+                    card.style.flex = '1.5';
+                }
+            } else {
+                card.style.display = 'block';
+            }
+        });
+
+        if (index === 2) {
+            socialText.style.display = 'block';
+            number3.style.position = 'relative';
+            number3.style.bottom = '25px';
+        } else {
+            socialText.style.display = 'none';
+            number3.style.position = 'static';
+            number3.style.bottom = 'auto';
+        }
+    }
+
+    function handleCardClick(index) {
+        return function() {
+            currentIndex = index;
+            updateActiveCard(currentIndex);
+        };
+    }
+
+    function handleButtonClick(index) {
+        return function() {
+            currentIndex = index;
+            updateActiveCard(currentIndex);
+        };
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === "ArrowDown") {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateActiveCard(currentIndex);
+        } else if (event.key === "ArrowUp") {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateActiveCard(currentIndex);
+        }
+    }
+
+    function addEventListeners() {
+        document.addEventListener("keydown", handleKeyDown);
+        cards.forEach((card, index) => {
+            card.addEventListener("click", handleCardClick(index));
+        });
+        document.getElementById('buttonA').addEventListener('click', handleButtonClick(0));
+        document.getElementById('buttonB').addEventListener('click', handleButtonClick(1));
+        document.getElementById('buttonC').addEventListener('click', handleButtonClick(2));
+        document.getElementById('buttonD').addEventListener('click', handleButtonClick(3));
+    }
+
+    function removeEventListeners() {
+        document.removeEventListener("keydown", handleKeyDown);
+        cards.forEach((card, index) => {
+            card.removeEventListener("click", handleCardClick(index));
+        });
+        document.getElementById('buttonA').removeEventListener('click', handleButtonClick(0));
+        document.getElementById('buttonB').removeEventListener('click', handleButtonClick(1));
+        document.getElementById('buttonC').removeEventListener('click', handleButtonClick(2));
+        document.getElementById('buttonD').removeEventListener('click', handleButtonClick(3));
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                addEventListeners();
+            } else {
+                removeEventListeners();
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(nextSection);
+
+    updateCardVisibility(currentIndex);
+});
+
+
+    </script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+        * {
+            box-sizing: border-box;
+        }
+        #next-section{
+            height: 100vh;
+        }
+        body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+        .hdng {
+            color: #023625;
+            font-size: 48px;
+            font-family: 'Glory', sans-serif;
+            font-weight: 800;
+            text-align: center;
+        }
+
+
+        .container-1 {
+            display: flex;
+            width: 120vw;
+        }
+
+        .card-content {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .card-content .number {
+            font-size: 35px;
+            color: transparent;
+            -webkit-text-stroke: .5px white;
+            text-stroke: 10px white;
+
+
+        }
+        .card-content .number-1 {
+            font-size: 35px;
+            color: transparent;
+            -webkit-text-stroke: .5px white;
+            text-stroke: 10px white;
+            position: relative;
+            bottom: 0 !important;
+
+
+        }
+
+        /* .social-cont{
+            font-size: 15px;
+            margin: 0;
+            opacity: 0.8;
+            font-family: 'Gilroy', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            padding: 10px ~!important;
+            
+        } */
+
+        .card {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 45vh;
+            color: #fff;
+            cursor: pointer;
+            flex: 1.5;
+            margin: 10px;
+            position: relative;
+            transition: all 400ms ease-in;
+            display: block;
+            /* Ensure all cards are initially visible */
+        }
+
+
+
+
+
+        .card h3 {
+            font-size: 20px;
+            margin: 0;
+            opacity: 0.8;
+            font-family: 'Gilroy', sans-serif;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .card.active {
+            flex: 5;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+            }
+
+            .card:nth-of-type(4),
+            .card:nth-of-type(5) {
+                display: none;
+            }
+        }
+
+        .progress-container {
+            width: 80vw;
+            background: #30D8A4 !important;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 20px;
+            height: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #023625 !important;
+            width: 0;
+            transition: width 1s ease-in;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80vw;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-family: 'Gilroy', sans-serif;
+            font-weight: 700;
+        }
+
+        .arrow-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #scrollDownBtn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        #scrollDownBtn img {
+            width: 40px;
+            /* Adjust as needed */
+        }
+    </style>
